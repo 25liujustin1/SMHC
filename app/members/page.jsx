@@ -26,7 +26,7 @@ export default function MembersPage() {
           transformHeader: (header) => header.trim().toLowerCase(),
           transform: (value) => value.trim(),
         }).data;
-        console.log(parsed);
+
         memberCache = parsed;
         setMembers(parsed);
       });
