@@ -3,7 +3,12 @@ import { google } from 'googleapis';
 export async function GET() {
   try {
     const auth = new google.auth.GoogleAuth({
-      keyFile: process.env.GOOGLE_KEYFILE,
+      credentials: process.env.GOOGLE_CREDENTIALS
+        ? JSON.parse(process.env.GOOGLE_CREDENTIALS)
+        : undefined,
+      keyFile: process.env.GOOGLE_CREDENTIALS
+        ? undefined
+        : process.env.GOOGLE_KEYFILE,
       scopes: ['https://www.googleapis.com/auth/calendar.readonly'],
     });
 
