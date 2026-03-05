@@ -1,3 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* ---- Design Tokens (Tailwind v4 way) ---- */
+@theme {
+  --color-navy: #0D1B4B;
+  --color-royal: #2452A4;
+  --color-saffron: #F4871E;
+  --color-gold-light: #FAC97E;
+  --color-cream: #FDFAF5;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lato", sans-serif;
+}
+
+/* Optional global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[var(--color-cream)] text-[var(--color-navy)] font-body;
+}
