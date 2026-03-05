@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "About",    href: "/#about" },
@@ -11,6 +12,8 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const alwaysDark = pathname === '/calendar';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -21,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-5 transition-all duration-400 ${
-        scrolled
+        scrolled || alwaysDark
           ? "bg-navy/97 shadow-[0_2px_24px_rgba(0,0,0,0.18)]"
           : "bg-transparent"
       }`}
