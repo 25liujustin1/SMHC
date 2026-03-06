@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const CONTACT_CARDS = [
   {
     title: "Email",
-    value: "hello@yourdomain.org",
+    value: "sikhmentalhealth@gmail.com",
     note: "General inquiries and collaborations",
   },
   {
@@ -20,8 +20,8 @@ const CONTACT_CARDS = [
   },
   {
     title: "Social",
-    value: "@placeholderhandle",
-    note: "Instagram and Facebook",
+    value: "@sikhmhsummit",
+    note: "Instagram",
   },
 ];
 
@@ -60,8 +60,7 @@ export default function Contact() {
             We are here to listen and help you find the right support
           </h1>
           <p className="reveal opacity-0 translate-y-6 transition-all duration-700 delay-200 text-cream/70 text-lg leading-relaxed max-w-2xl mx-auto">
-            Share what you are looking for and we will follow up with care. Replace the
-            placeholders below with your preferred contact details and response times.
+            Share what you are looking for and we will follow up with care.
           </p>
 
           <div className="reveal opacity-0 translate-y-6 transition-all duration-700 delay-300 mt-10 inline-flex flex-wrap items-center justify-center gap-4 bg-white/10 border border-white/15 px-6 py-4 rounded-sm text-sm text-cream/80">
@@ -99,7 +98,7 @@ export default function Contact() {
                   <p className="text-xs uppercase tracking-[0.18em] text-saffron font-semibold mb-3">
                     {card.title}
                   </p>
-                  <p className="font-display text-lg text-navy mb-2">{card.value}</p>
+                  <p className="font-display text-m text-navy mb-2">{card.value}</p>
                   <p className="text-sm text-navy/60">{card.note}</p>
                 </div>
               ))}
