@@ -53,7 +53,7 @@ export default function Navbar() {
           isMembersTop ? "text-navy" : "text-cream"
         }`}
       >
-        SMHC <span className={isMembersTop ? "text-navy" : "text-saffron"}>·</span> Sikh Mental Health
+        SMHC <span className={isMembersTop ? "text-navy" : "text-saffron"}>·</span> Sikh Mental Health Collective
       </Link>
 
       {/* Desktop links */}
