@@ -32,7 +32,10 @@ export default function Navbar() {
     return () => document.removeEventListener("keydown", onEscape);
   }, []);
 
-  const useSolidBackground = scrolled || pathname !== "/";
+  const useSolidBackground =
+    scrolled ||
+    (pathname !== "/" && pathname !== "/contact" && pathname !== "/members");
+  const isMembersTop = pathname === "/members" && !scrolled;
 
   return (
     <>
@@ -46,9 +49,11 @@ export default function Navbar() {
       {/* Logo */}
       <Link
         href="/"
-        className="font-display text-cream text-lg tracking-wide no-underline"
+        className={`font-display font-semibold text-lg tracking-wide no-underline transition-colors duration-200 ${
+          isMembersTop ? "text-navy" : "text-cream"
+        }`}
       >
-        SMHC <span className="text-saffron">·</span> Sikh Mental Health
+        SMHC <span className={isMembersTop ? "text-navy" : "text-saffron"}>·</span> Sikh Mental Health
       </Link>
 
       {/* Desktop links */}
@@ -57,7 +62,9 @@ export default function Navbar() {
           <li key={label}>
             <Link
               href={href}
-              className="text-cream/80 no-underline text-xs font-bold tracking-widest uppercase transition-colors duration-200 hover:text-saffron"
+              className={`no-underline text-xs font-bold tracking-widest uppercase transition-colors duration-200 ${
+                isMembersTop ? "text-navy/90 hover:text-white" : "text-cream/80 hover:text-saffron"
+              }`}
             >
               {label}
             </Link>
@@ -68,7 +75,9 @@ export default function Navbar() {
       {/* Mobile: hamburger button */}
       <button
         type="button"
-        className="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 rounded-md text-cream cursor-pointer focus:outline-none"
+        className={`md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 rounded-md cursor-pointer focus:outline-none transition-colors duration-200 ${
+          isMembersTop ? "text-navy" : "text-cream"
+        }`}
         onClick={() => setMenuOpen((o) => !o)}
         aria-expanded={menuOpen}
         aria-label={menuOpen ? "Close menu" : "Open menu"}

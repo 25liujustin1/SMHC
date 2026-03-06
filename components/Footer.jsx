@@ -10,7 +10,7 @@ const FOOTER_LINKS = [
 export default function Footer() {
   return (
     <footer className="bg-navy border-t border-saffron/15 px-12 py-8 flex items-center justify-between flex-wrap gap-4">
-      <div className="font-display text-cream text-base">
+      <div className="font-display font-semibold text-cream text-base">
         SMHC <span className="text-saffron">·</span> Sikh Mental Health Collective
       </div>
 

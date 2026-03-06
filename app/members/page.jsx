@@ -59,15 +59,16 @@ export default function MembersPage() {
   if (showUnderConstruction) {
     return (
       <div>
-        <section className="relative h-[70vh] min-h-[320px] bg-saffron overflow-hidden">
+        <section className="relative flex flex-col justify-center overflow-hidden bg-linear-to-r from-saffron to-[#e07010] px-6 pt-28 pb-20 min-h-[420px] md:min-h-[500px]">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full border border-cream/15" />
-            <div className="absolute -bottom-28 -right-24 w-96 h-96 rounded-full border border-cream/10" />
-            <div className="absolute top-10 right-1/4 w-40 h-40 bg-cream/6 blur-3xl rounded-full" />
-            <div className="absolute bottom-4 left-10 w-32 h-32 bg-gold-light/10 blur-2xl rounded-full" />
+            <div className="absolute top-[10%] left-[10%] w-96 h-96 bg-gold-light/15 rounded-full blur-3xl" />
+            <div className="absolute bottom-[15%] right-[10%] w-80 h-80 bg-cream/12 rounded-full blur-3xl" />
+            <div className="absolute top-[-100px] right-[-120px] w-[500px] h-[500px] rounded-full border border-cream/15 pointer-events-none" />
+            <div className="absolute top-[-40px] right-[-30px] w-[340px] h-[340px] rounded-full border border-gold-light/12 pointer-events-none" />
+            <div className="absolute bottom-[60px] left-[-60px] w-[260px] h-[260px] rounded-full border border-cream/10 pointer-events-none" />
           </div>
 
-          <div className="relative h-full flex items-center justify-center">
+          <div className="relative z-10 mx-auto max-w-4xl text-center">
             <div className="mx-auto w-full max-w-4xl px-6 text-center">
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-navy mb-3">
                 Meet Our Members!
@@ -91,7 +92,7 @@ export default function MembersPage() {
 
   return (
     <div>
-      <section className="relative h-[70vh] min-h-[320px] bg-saffron overflow-hidden">
+      <section className="relative flex flex-col justify-center overflow-hidden bg-linear-to-r from-saffron to-[#e07010] px-6 pt-28 pb-20 min-h-[420px] md:min-h-[500px]">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full border border-cream/15" />
           <div className="absolute -bottom-28 -right-24 w-96 h-96 rounded-full border border-cream/10" />
@@ -99,7 +100,7 @@ export default function MembersPage() {
           <div className="absolute bottom-4 left-10 w-32 h-32 bg-gold-light/10 blur-2xl rounded-full" />
         </div>
 
-        <div className="relative h-full flex items-center justify-center">
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mx-auto w-full max-w-4xl px-6 text-center">
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-navy mb-3">
               Meet Our Members!
