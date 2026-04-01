@@ -1,11 +1,14 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
+  { label: "Research", href: "/research" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Survey", href: "/survey" },
   { label: "Members", href: "/members" },
   { label: "Calendar", href: "/calendar" },
   { label: "Contact", href: "/contact" },
@@ -36,62 +39,62 @@ export default function Navbar() {
 
   return (
     <>
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-4 md:px-12 md:py-5 transition-all duration-400 ${
-        useSolidBackground
-          ? "bg-navy/97 shadow-[0_2px_24px_rgba(0,0,0,0.18)]"
-          : "bg-transparent"
-      }`}
-    >
-      {/* Logo */}
-      <Link
-        href="/"
-        className="font-display text-cream text-lg tracking-wide no-underline"
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-4 md:px-12 md:py-5 transition-all duration-400 ${
+          useSolidBackground
+            ? "bg-navy/97 shadow-[0_2px_24px_rgba(0,0,0,0.18)]"
+            : "bg-transparent"
+        }`}
       >
-        SMHC <span className="text-saffron">·</span> Sikh Mental Health
-      </Link>
+        {/* Logo */}
+        <Link
+          href="/"
+          className="font-display text-cream text-lg tracking-wide no-underline"
+        >
+          SMHC <span className="text-saffron">Â·</span> Sikh Mental Health
+        </Link>
 
-      {/* Desktop links */}
-      <ul className="hidden md:flex gap-10 list-none">
-        {NAV_LINKS.map(({ label, href }) => (
-          <li key={label}>
-            <Link
-              href={href}
-              className="text-cream/80 no-underline text-xs font-bold tracking-widest uppercase transition-colors duration-200 hover:text-saffron"
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        {/* Desktop links */}
+        <ul className="hidden md:flex gap-10 list-none">
+          {NAV_LINKS.map(({ label, href }) => (
+            <li key={label}>
+              <Link
+                href={href}
+                className="text-cream/80 no-underline text-xs font-bold tracking-widest uppercase transition-colors duration-200 hover:text-saffron"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-      {/* Mobile: hamburger button */}
-      <button
-        type="button"
-        className="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 rounded-md text-cream cursor-pointer focus:outline-none"
-        onClick={() => setMenuOpen((o) => !o)}
-        aria-expanded={menuOpen}
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
-      >
-        <span
-          className={`block h-0.5 w-6 bg-current transition-all origin-center ${
-            menuOpen ? "rotate-45 translate-y-2" : ""
-          }`}
-        />
-        <span
-          className={`block h-0.5 w-6 bg-current transition-all ${
-            menuOpen ? "opacity-0 scale-x-0" : ""
-          }`}
-        />
-        <span
-          className={`block h-0.5 w-6 bg-current transition-all origin-center ${
-            menuOpen ? "-rotate-45 -translate-y-2" : ""
-          }`}
-        />
-      </button>
-    </nav>
+        {/* Mobile: hamburger button */}
+        <button
+          type="button"
+          className="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 rounded-md text-cream cursor-pointer focus:outline-none"
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+        >
+          <span
+            className={`block h-0.5 w-6 bg-current transition-all origin-center ${
+              menuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-current transition-all ${
+              menuOpen ? "opacity-0 scale-x-0" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-current transition-all origin-center ${
+              menuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          />
+        </button>
+      </nav>
 
-    {/* Mobile dropdown */}
+      {/* Mobile dropdown */}
       {menuOpen && (
         <div
           className="fixed inset-0 z-40 md:hidden bg-black/30"

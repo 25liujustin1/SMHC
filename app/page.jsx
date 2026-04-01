@@ -1,7 +1,34 @@
-"use client";
+﻿"use client";
 import { useEffect } from "react";
 import ResourceCard from "@/components/ResourceCard";
 import QuoteBlock from "@/components/QuoteBlock";
+
+const TESTIMONIALS = [
+  {
+    name: "Simran K.",
+    role: "Community member",
+    quote:
+      "SMHC created a space where I could name what I was feeling without shame. It felt like coming home.",
+  },
+  {
+    name: "Arjun S.",
+    role: "Volunteer",
+    quote:
+      "The circles are thoughtful and grounded. The mix of clinical care and Sikh values is powerful.",
+  },
+  {
+    name: "Jasleen P.",
+    role: "Student",
+    quote:
+      "I finally found resources that reflected my culture and faith. It made reaching out feel possible.",
+  },
+  {
+    name: "Kiran D.",
+    role: "Parent",
+    quote:
+      "The collective offers real support with warmth and respect. It helped our family start healing.",
+  },
+];
 
 const RESOURCES = [
   {
@@ -40,7 +67,6 @@ export default function HomePage() {
 
   return (
     <main className="overflow-x-hidden">
-
       {/* HERO */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 pt-28 pb-16 bg-gradient-to-br from-navy via-[#1a3072] to-royal">
         <div className="absolute inset-0 pointer-events-none">
@@ -56,12 +82,11 @@ export default function HomePage() {
             Sikh Mental Health Collective
           </span>
           <h1 className="font-display text-cream text-5xl md:text-7xl leading-tight mb-6 animate-[fadeUp_0.9s_0.45s_both]">
-            Healing begins with{" "}
-            <em className="text-gold-light">community</em>
+            Healing begins with <em className="text-gold-light">community</em>
           </h1>
           <p className="text-cream/70 text-lg leading-relaxed max-w-xl mx-auto mb-10 font-light animate-[fadeUp_0.9s_0.7s_both]">
-            A safe, culturally grounded space for Sikhs to explore mental wellness —
-            rooted in our values of seva, compassion, and Chardi Kala.
+            A safe, culturally grounded space for Sikhs to explore mental wellness — rooted
+            in our values of seva, compassion, and Chardi Kala.
           </p>
           <a
             href="/contact"
@@ -135,10 +160,42 @@ export default function HomePage() {
       {/* QUOTE */}
       <section className="bg-cream py-28 px-6">
         <div className="reveal opacity-0 translate-y-6 transition-all duration-700">
-          <QuoteBlock
-            quote="Recognize the human race as one."
-            attribution="Guru Gobind Singh Ji"
-          />
+          <QuoteBlock quote="Recognize the human race as one." attribution="Guru Gobind Singh Ji" />
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-cream py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="reveal opacity-0 translate-y-6 transition-all duration-700 text-center mb-12">
+            <p className="text-xs tracking-[0.22em] uppercase text-saffron font-bold mb-4">Community Voices</p>
+            <h2 className="font-display text-navy text-4xl md:text-5xl leading-tight">
+              Stories of care, courage, and connection
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {TESTIMONIALS.map((t, i) => (
+              <div
+                key={`${t.name}-${i}`}
+                className="reveal opacity-0 translate-y-6 transition-all duration-700 bg-white border border-navy/10 p-6 rounded-sm shadow-[0_18px_40px_rgba(13,27,75,0.08)]"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <p className="text-navy/70 leading-relaxed mb-6">"{t.quote}"</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-display text-navy text-lg">{t.name}</p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-saffron font-semibold">
+                      {t.role}
+                    </p>
+                  </div>
+                  <div className="w-10 h-10 rounded-full border border-saffron/40 flex items-center justify-center text-saffron">
+                    ❖
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -159,7 +216,6 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-
     </main>
   );
 }

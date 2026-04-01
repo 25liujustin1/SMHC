@@ -1,20 +1,44 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const FOOTER_LINKS = [
-  { label: "About",    href: "/#about" },
-  { label: "Members",  href: "/members" },
+  { label: "About", href: "/about" },
+  { label: "Research", href: "/research" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Survey", href: "/survey" },
+  { label: "Socials", href: "/socials" },
+  { label: "Chatbot", href: "/chat" },
+  { label: "Members", href: "/members" },
   { label: "Calendar", href: "/calendar" },
-  { label: "Contact",  href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-navy border-t border-saffron/15 px-12 py-8 flex items-center justify-between flex-wrap gap-4">
-      <div className="font-display text-cream text-base">
-        SMHC <span className="text-saffron">·</span> Sikh Mental Health Collective
+    <footer className="bg-navy border-t border-saffron/15 px-12 py-10 flex flex-wrap items-start justify-between gap-8">
+      <div className="space-y-3">
+        <div className="font-display text-cream text-base">
+          SMHC <span className="text-saffron">Â·</span> Sikh Mental Health Collective
+        </div>
+        <p className="text-cream/45 text-xs max-w-xs">
+          A safe, culturally grounded space for Sikhs to explore mental wellness with care.
+        </p>
       </div>
 
-      <ul className="flex gap-6 list-none">
+      <div className="space-y-3">
+        <p className="text-xs uppercase tracking-[0.22em] text-saffron font-semibold">
+          Contact
+        </p>
+        <div className="text-cream/55 text-xs space-y-2">
+          <p>
+            <span className="text-cream/70">Email:</span> sikhmentalhealth@gmail.com
+          </p>
+          <p>
+            <span className="text-cream/70">Instagram:</span> @sikhmhsummit
+          </p>
+        </div>
+      </div>
+
+      <ul className="flex flex-wrap gap-4 max-w-md list-none">
         {FOOTER_LINKS.map(({ label, href }) => (
           <li key={label}>
             <Link
@@ -28,7 +52,7 @@ export default function Footer() {
       </ul>
 
       <p className="text-cream/35 text-xs tracking-wide">
-        © {new Date().getFullYear()} SMHC. Made with seva.
+        Â© {new Date().getFullYear()} SMHC. Made with seva.
       </p>
     </footer>
   );
