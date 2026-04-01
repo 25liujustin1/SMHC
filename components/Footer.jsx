@@ -16,8 +16,8 @@ export default function Footer() {
   return (
     <footer className="bg-navy border-t border-saffron/15 px-12 py-10 flex flex-wrap items-start justify-between gap-8">
       <div className="space-y-3">
-        <div className="font-display text-cream text-base">
-          SMHC <span className="text-saffron">Â·</span> Sikh Mental Health Collective
+        <div className="font-display font-semibold text-cream text-base">
+          SMHC <span className="text-saffron">·</span> Sikh Mental Health Collective
         </div>
         <p className="text-cream/45 text-xs max-w-xs">
           A safe, culturally grounded space for Sikhs to explore mental wellness with care.
